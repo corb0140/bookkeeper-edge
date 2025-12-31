@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* FONT */
+  --font-mona: "Mona Sans", sans-serif;
+
+  /* COLORS */
+  --color-primary: hsl(218, 79%, 35%);
+  --color-light-blue: hsl(219, 57%, 48%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+@layer base {
+  body {
+    @apply m-0 flex min-h-screen tracking-wide text-[16px] font-mona bg-primary text-white;
+  }
+
+  p {
+    @apply lg:text-sm;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-bold text-4xl;
+  }
+}
+
+@layer components {
+  button {
+    @apply cursor-pointer outline-none border-0 bg-transparent;
+  }
+}
+
+@layer utility {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
