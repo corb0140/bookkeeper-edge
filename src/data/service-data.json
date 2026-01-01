@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Monthly Bookkeeping",
     "description": "Keep your books accurate and up-to-date with consistent monthly reconciliation and reporting.",
-    "details": "We handle all your monthly bookkeeping tasks, track income & expenses, reconcile bank statements, and prepare monthly reports.",
+    "details": "I handle all your monthly bookkeeping tasks, track income & expenses, reconcile bank statements, and prepare monthly reports.",
     "icon": "pi pi-calendar"
   },
   {
@@ -17,28 +17,28 @@
     "id": 3,
     "title": "Bank Reconciliation",
     "description": "Ensure your records match your bank statements every month.",
-    "details": "We reconcile all bank accounts, detect discrepancies, and help maintain accurate financial records.",
+    "details": "I reconcile all bank accounts, detect discrepancies, and help maintain accurate financial records.",
     "icon": "pi pi-credit-card"
   },
   {
     "id": 4,
     "title": "Accounts Receivable",
     "description": "Track invoices and ensure timely payments from clients.",
-    "details": "We manage your invoicing process, follow up on payments, and keep your cash flow healthy.",
+    "details": "I manage your invoicing process, follow up on payments, and keep your cash flow healthy.",
     "icon": "pi pi-wallet"
   },
   {
     "id": 5,
     "title": "Accounts Payable",
     "description": "Manage bills and payments efficiently.",
-    "details": "We handle vendor payments, track due dates, and optimize your expenses to prevent late fees.",
+    "details": "I handle vendor payments, track due dates, and optimize your expenses to prevent late fees.",
     "icon": "pi pi-money-bill"
   },
   {
     "id": 6,
     "title": "Financial Reporting",
     "description": "Understand your business performance at a glance.",
-    "details": "We create clear and concise financial reports that help you make informed business decisions.",
+    "details": "I create clear and concise financial reports that help you make informed business decisions.",
     "icon": "pi pi-chart-line"
   }
 ]

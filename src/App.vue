@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <div class="max-w-screen">
-    <header>
+  <div class="min-w-screen overflow-x-hidden">
+    <header class="">
       <Navbar />
     </header>
 

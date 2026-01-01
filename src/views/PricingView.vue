@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import "primeicons/primeicons.css";
+</script>
 
 <template>
-  <h1>Pricing Page</h1>
+  <section class=""></section>
 </template>
