@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "icon": "pi pi-briefcase",
+    "title": "Businesses",
+    "color": "hsl(145, 72%, 38%)"
+  },
+  {
+    "id": 2,
+    "icon": "pi pi-user-edit",
+    "title": "Freelancers",
+    "color": "hsl(287, 57%, 48%)"
+  },
+  {
+    "id": 3,
+    "icon": "pi pi-lightbulb",
+    "title": "Startups",
+    "color": "hsl(58, 80%, 52%)"
+  },
+  {
+    "id": 4,
+    "icon": "pi pi-building",
+    "title": "Contractors",
+    "color": "hsl(145, 72%, 38%)"
+  },
+  {
+    "id": 5,
+    "icon": "pi pi-id-card",
+    "title": "Professionals",
+    "color": "hsl(287, 57%, 48%)"
+  },
+  {
+    "id": 6,
+    "icon": "pi pi-users",
+    "title": "Consultants",
+    "color": "hsl(58, 80%, 52%)"
+  }
+]

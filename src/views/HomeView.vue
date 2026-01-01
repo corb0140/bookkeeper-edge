@@ -2,6 +2,8 @@
 import "primeicons/primeicons.css";
 import ServiceCard from "../components/Cards/ServiceCard.vue";
 import services from "../data/service-data.json";
+import AudienceCard from "../components/Cards/AudienceCard.vue";
+import audiences from "../data/target-audience-data.json";
 </script>
 
 <template>
@@ -36,7 +38,7 @@ import services from "../data/service-data.json";
   </section>
 
   <!-- SERVICES SECTION -->
-  <section id="services" class="relative mt-20 py-5 lg:px-50">
+  <section id="services" class="relative mt-20 lg:px-50">
     <h2 class="font-bold mb-10">Services</h2>
 
     <div
@@ -76,6 +78,50 @@ import services from "../data/service-data.json";
               : 'card6',
         }"
       />
+    </div>
+  </section>
+
+  <!-- TARGET AUDIENCE -->
+  <section
+    id="target-audience"
+    class="mt-20 py-5 lg:px-50 flex flex-col items-center"
+  >
+    <div class="w-full md:w-[clamp(30vw,50vw,80vw)]">
+      <h2 class="font-bold mb-10 not-lg:text-2xl text-center">
+        Who I Can Help
+      </h2>
+
+      <p class="text-center">
+        I help small business owners, freelancers, and service professionals
+        manage their finances so they can focus on growing their business. I
+        provide accurate, organized, and stress free bookkeeping.
+      </p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center gap-5 mt-10">
+      <div class="text-sm flex lg:flex-col gap-3 w-full">
+        <AudienceCard
+          v-for="audience in audiences.slice(0, 2)"
+          :key="audience.id"
+          :audience="audience"
+        />
+      </div>
+
+      <div class="text-sm flex lg:flex-col gap-3 w-full lg:mt-5">
+        <AudienceCard
+          v-for="audience in audiences.slice(2, 4)"
+          :key="audience.id"
+          :audience="audience"
+        />
+      </div>
+
+      <div class="text-sm flex lg:flex-col gap-3 w-full">
+        <AudienceCard
+          v-for="audience in audiences.slice(4, 6)"
+          :key="audience.id"
+          :audience="audience"
+        />
+      </div>
     </div>
   </section>
 </template>
