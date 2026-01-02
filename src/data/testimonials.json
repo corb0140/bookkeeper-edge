@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "quote": "Bookkeeper’s Edge helped me get my finances organized and stress free. I finally understand my numbers.",
+    "name": "Sarah M.",
+    "businessType": "Small Business Owner"
+  },
+  {
+    "id": 2,
+    "quote": "Reliable, professional, and always on time with reports. Highly recommended.",
+    "name": "Jason L.",
+    "businessType": "Self-Employed Contractor"
+  },
+  {
+    "id": 3,
+    "quote": "Clear communication and personalized service. Exactly what my business needed.",
+    "name": "Amanda R.",
+    "businessType": "Freelance Consultant"
+  }
+]

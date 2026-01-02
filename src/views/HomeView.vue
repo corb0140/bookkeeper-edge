@@ -1,9 +1,28 @@
 <script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 import "primeicons/primeicons.css";
+
+const router = useRouter();
+
+import MainButton from "../components/MainButton.vue";
 import ServiceCard from "../components/Cards/ServiceCard.vue";
 import services from "../data/service-data.json";
 import AudienceCard from "../components/Cards/AudienceCard.vue";
 import audiences from "../data/target-audience-data.json";
+import trustContent from "../data/trust-content.json";
+import TestimonialCard from "../components/Cards/TestimonialCard.vue";
+import testimonials from "../data/testimonials.json";
+
+const openId = ref(null);
+
+function toggleActiveId(id) {
+  openId.value = openId.value === id ? null : id;
+}
+
+function navigateTo(path) {
+  router.push(path);
+}
 </script>
 
 <template>
@@ -22,19 +41,11 @@ import audiences from "../data/target-audience-data.json";
       Simplifying Your Finances So You Can Focus on Growing Your Business.
     </p>
 
-    <button
-      class="group relative overflow-hidden bg-white py-3 px-6 text-primary rounded-lg mt-10 lg:mt-20 self-center flex items-center gap-2"
-    >
-      <div
-        class="flex items-center bg-white absolute h-full w-full -left-100 group-hover:left-0 transition-all duration-700"
-      >
-        <i
-          class="pi pi-arrow-right mx-auto text-light-blue"
-          style="font-size: 13px"
-        />
-      </div>
-      <p class="font-medium">Get Free Consultation</p>
-    </button>
+    <MainButton
+      :onClick="() => navigateTo('/contact')"
+      text="Get Free Consultation"
+      class="self-center"
+    />
   </section>
 
   <!-- SERVICES SECTION -->
@@ -87,7 +98,7 @@ import audiences from "../data/target-audience-data.json";
     class="mt-20 py-5 lg:px-50 flex flex-col items-center"
   >
     <div class="w-full md:w-[clamp(30vw,50vw,80vw)]">
-      <h2 class="font-bold mb-10 not-lg:text-2xl text-center">
+      <h2 class="font-bold mb-10 text-center not-lg:text-2xl">
         Who I Can Help
       </h2>
 
@@ -124,4 +135,107 @@ import audiences from "../data/target-audience-data.json";
       </div>
     </div>
   </section>
+
+  <!-- TRUST SECTION -->
+  <section id="trust" class="mt-20 py-5 lg:px-50 flex flex-col items-center">
+    <div class="w-full">
+      <h2 class="font-bold mb-10 text-center not-lg:text-2xl">
+        Why Trust Bookkeeper's Edge
+      </h2>
+
+      <p class="text-center max-w-150 mx-auto">
+        I provide dependable bookkeeping services built on accuracy, trust, and
+        personalized support for your business.
+      </p>
+    </div>
+
+    <!-- ACCORDION -->
+    <div
+      class="flex flex-col items-center gap-2 mt-8 w-full md:w-[70%] cursor-pointer"
+      v-for="trust in trustContent"
+      :key="trust.id"
+      @click="toggleActiveId(trust.id)"
+    >
+      <!-- HEADER -->
+      <div class="flex items-center justify-between w-full">
+        <div class="flex items-center gap-3">
+          <i class="pi pi-check-circle text-green"></i>
+          <span class="font-medium">{{ trust.title }}</span>
+        </div>
+
+        <i
+          class="pi"
+          :class="openId === trust.id ? 'pi-chevron-up' : 'pi-chevron-down'"
+        ></i>
+      </div>
+
+      <!-- CONTENT -->
+      <transition name="accordion">
+        <p v-if="openId === trust.id" class="mt-3 w-full">
+          {{ trust.description }}
+        </p>
+      </transition>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section
+    id="trust"
+    class="mt-20 lg:mt-40 py-5 lg:px-50 flex flex-col lg:flex-row items-center lg:gap-x-15 lg:h-[70vh] w-full"
+  >
+    <div class="h-full flex flex-col items-start gap-4">
+      <h2
+        class="font-bold not-lg:mb-10 lg:mt-5 text-center mx-auto md:text-[clamp(1rem,4.5rem,3rem)]"
+      >
+        What Clients Say
+      </h2>
+
+      <p class="not-lg:text-center max-w-150">
+        Trusted by small business owners who value accuracy, reliability, and
+        peace of mind.
+      </p>
+
+      <MainButton
+        :onClick="() => navigateTo('/')"
+        text="See More Testimonials"
+        class="mx-auto lg:mx-0"
+      />
+    </div>
+
+    <div class="not-lg:mt-10 h-full md:flex md:gap-2 lg:block">
+      <TestimonialCard
+        v-for="(testimonial, index) in testimonials"
+        :key="testimonial.id"
+        :testimonial="testimonial"
+        class="flex-1"
+        :class="
+          index === 0
+            ? 'lg:w-[clamp(50%,40vw,520px)]'
+            : index === 1
+            ? 'relative lg:w-[clamp(250px,20vw,400px)] lg:left-65 lg:bottom-5 z-10'
+            : 'relative lg:w-[clamp(200px,300px,400px)] lg:left-5 lg:bottom-40 lg:min-h-60'
+        "
+      />
+    </div>
+  </section>
 </template>
+
+<style scoped>
+.accordion-enter-active {
+  transition: opacity 0.25s ease-in, transform 0.25s ease-in;
+}
+
+.accordion-leave-active {
+  transition: opacity 0s ease-out, transform 0s ease-out;
+}
+
+.accordion-enter-from {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.accordion-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+</style>
