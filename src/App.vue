@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar.vue";
     </main>
 
     <footer>
-      <!-- <Footer /> -->
+      <Footer />
     </footer>
   </div>
 </template>

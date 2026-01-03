@@ -12,7 +12,7 @@ const props = defineProps({
     :class="
       testimonial.name !== 'Jason L.'
         ? 'bg-white group hover:z-10'
-        : 'bg-white/2 border border-light-blue/10 shadow-[0px_0px_10px_rgb(0,0,0,0.1)] backdrop-blur-xs group hover:bg-white transition-all duration-300'
+        : 'bg-white/2 border border-white/20 shadow-[0px_0px_10px_rgb(0,0,0,0.1)] backdrop-blur-xs group hover:bg-white transition-all duration-300'
     "
     class="rounded-xl p-6 flex flex-col min-h-45 not-lg:mt-5"
   >

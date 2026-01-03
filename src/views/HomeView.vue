@@ -32,7 +32,7 @@ function navigateTo(path) {
     class="w-[clamp(300px,50vw,100vw)] mx-auto relative py-10 flex flex-col"
   >
     <div
-      class="absolute -top-5 h-full rounded-full opacity-15 bg-white blur-[100px]"
+      class="absolute -top-5 h-full w-full rounded-full bg-white/10 blur-[100px]"
     ></div>
 
     <h1 class="text-center lg:text-6xl">Your trusted partner in bookkeeping</h1>
@@ -44,7 +44,7 @@ function navigateTo(path) {
     <MainButton
       :onClick="() => navigateTo('/contact')"
       text="Get Free Consultation"
-      class="self-center"
+      class="self-center mt-10 lg:mt-20"
     />
   </section>
 
@@ -198,7 +198,7 @@ function navigateTo(path) {
       <MainButton
         :onClick="() => navigateTo('/')"
         text="See More Testimonials"
-        class="mx-auto lg:mx-0"
+        class="mx-auto lg:mx-0 mt-10 lg:mt-20"
       />
     </div>
 
@@ -215,6 +215,26 @@ function navigateTo(path) {
             ? 'relative lg:w-[clamp(250px,20vw,400px)] lg:left-65 lg:bottom-5 z-10'
             : 'relative lg:w-[clamp(200px,300px,400px)] lg:left-5 lg:bottom-40 lg:min-h-60'
         "
+      />
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section
+    id="call-to-action"
+    class="mt-20 py-5 w-full lg:w-1/2 lg:mx-auto relative"
+  >
+    <div
+      class="absolute top-10 left-10 lg:left-50 w-1/2 lg:w-1/3 h-1/2 lg:h-1/3 bg-white/25 blur-2xl lg:blur-3xl rounded-xl -z-10 opacity"
+    ></div>
+    <div
+      class="w-full min-h-35 border border-white/20 rounded-xl z-10 bg-white/5 backdrop-blur-md shadow-sm p-5 flex flex-col lg:flex-row items-center lg:justify-around"
+    >
+      <p class="text-center lg:text-xl">Ready to simplify your booking?</p>
+      <MainButton
+        :onClick="() => navigateTo('/contact')"
+        text="Contact us"
+        class="mt-10 lg:mt-0"
       />
     </div>
   </section>
