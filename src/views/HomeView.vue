@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import "primeicons/primeicons.css";
+import { motion } from "motion-v";
 
 const router = useRouter();
 
@@ -15,6 +16,7 @@ import TestimonialCard from "../components/Cards/TestimonialCard.vue";
 import testimonials from "../data/testimonials.json";
 
 const openId = ref(null);
+const targetAudienceRef = ref(null);
 
 function toggleActiveId(id) {
   openId.value = openId.value === id ? null : id;
@@ -27,7 +29,9 @@ function navigateTo(path) {
 
 <template>
   <!-- HERO SECTION -->
-  <section
+  <motion.section
+    :initial="{ y: 100, opacity: 0 }"
+    :animate="{ y: 0, opacity: 1, transition: { duration: 1 } }"
     id="hero"
     class="w-[clamp(300px,50vw,80vw)] mx-auto relative py-10 2xl:py-20 flex flex-col"
   >
@@ -48,7 +52,7 @@ function navigateTo(path) {
       text="Get Free Consultation"
       class="self-center mt-10 lg:mt-20"
     />
-  </section>
+  </motion.section>
 
   <!-- SERVICES SECTION -->
   <section id="services" class="relative mt-20 lg:px-50 2xl:px-150">
@@ -72,10 +76,12 @@ function navigateTo(path) {
       <div
         class="absolute left-0 top-0 bg-white/6 blur-[200px] h-full w-full"
       />
+
       <ServiceCard
         v-for="(service, index) in services"
         :key="service.id"
         :service="service"
+        :index="index"
         :style="{
           gridArea:
             index === 0
@@ -96,50 +102,91 @@ function navigateTo(path) {
 
   <!-- TARGET AUDIENCE -->
   <section
+    :ref="targetAudienceRef"
     id="target-audience"
     class="mt-20 2xl:mt-40 py-5 lg:px-50 2xl:px-80 flex flex-col items-center"
   >
     <div class="w-full md:w-[clamp(30vw,50vw,80vw)]">
-      <h2 class="font-bold mb-10 text-center not-lg:text-2xl 2xl:text-6xl">
+      <motion.h2
+        :initial="{ x: '-100%', opacity: 0 }"
+        :whileInView="{ x: '0', opacity: 1, transition: { duration: 0.5 } }"
+        :inViewOptions="{ once: true }"
+        class="font-bold mb-10 text-center not-lg:text-2xl 2xl:text-6xl"
+      >
         Who I Can Help
-      </h2>
+      </motion.h2>
 
-      <p class="text-center 2xl:text-xl">
+      <motion.p
+        :initial="{ x: '-100%', opacity: 0 }"
+        :whileInView="{
+          x: 0,
+          opacity: 1,
+          transition: { duration: 0.5 },
+        }"
+        :inViewOptions="{ once: true }"
+        class="text-center 2xl:text-xl"
+      >
         I help small business owners, freelancers, and service professionals
         manage their finances so they can focus on growing their business. I
         provide accurate, organized, and stress free bookkeeping.
-      </p>
+      </motion.p>
     </div>
 
-    <div class="flex flex-col lg:flex-row items-center gap-5 mt-10">
-      <div class="text-sm flex lg:flex-col gap-3 w-full">
+    <motion.div class="flex flex-col lg:flex-row items-center gap-5 mt-10">
+      <motion.div
+        :initial="{ y: 150, opacity: 0 }"
+        :whileInView="{ y: 0, opacity: 1, transition: { duration: 0.5 } }"
+        :inViewOptions="{ once: true }"
+        class="text-sm flex lg:flex-col gap-3 w-full"
+      >
         <AudienceCard
           v-for="audience in audiences.slice(0, 2)"
           :key="audience.id"
           :audience="audience"
         />
-      </div>
+      </motion.div>
 
-      <div class="text-sm flex lg:flex-col gap-3 w-full lg:mt-5">
+      <motion.div
+        :initial="{ y: 150, opacity: 0 }"
+        :whileInView="{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.5, delay: 0.4 },
+        }"
+        :inViewOptions="{ once: true }"
+        class="text-sm flex lg:flex-col gap-3 w-full lg:mt-5"
+      >
         <AudienceCard
           v-for="audience in audiences.slice(2, 4)"
           :key="audience.id"
           :audience="audience"
         />
-      </div>
+      </motion.div>
 
-      <div class="text-sm flex lg:flex-col gap-3 w-full">
+      <motion.div
+        :initial="{ y: 150, opacity: 0 }"
+        :whileInView="{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.5, delay: 0.8 },
+        }"
+        :inViewOptions="{ once: true }"
+        class="text-sm flex lg:flex-col gap-3 w-full"
+      >
         <AudienceCard
           v-for="audience in audiences.slice(4, 6)"
           :key="audience.id"
           :audience="audience"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </section>
 
   <!-- TRUST SECTION -->
-  <section
+  <motion.section
+    :initial="{ y: 100, x: 100, opacity: 0 }"
+    :whileInView="{ y: 0, x: 0, opacity: 1, transition: { duration: 0.6 } }"
+    :inViewOptions="{ once: true }"
     id="trust"
     class="mt-20 2xl:mt-40 py-5 lg:px-50 2xl:px-80 flex flex-col items-center"
   >
@@ -181,14 +228,19 @@ function navigateTo(path) {
         </p>
       </transition>
     </div>
-  </section>
+  </motion.section>
 
   <!-- TESTIMONIALS -->
   <section
     id="trust"
     class="mt-20 lg:mt-40 2xl:mt-60 py-5 lg:px-50 2xl:px-80 flex flex-col lg:flex-row items-center justify-center lg:gap-x-15 lg:h-[70vh] 2xl:h-[40vh] w-full"
   >
-    <div class="h-full flex flex-col items-start gap-4">
+    <motion.div
+      :initial="{ opacity: 0 }"
+      :whileInView="{ opacity: 1, transition: { duration: 4.5 } }"
+      :inViewOptions="{ once: true }"
+      class="h-full flex flex-col items-start gap-4"
+    >
       <h2
         class="font-bold not-lg:mb-10 lg:mt-5 text-center mx-auto md:text-[clamp(1rem,4.5rem,3rem)] 2xl:text-8xl"
       >
@@ -205,13 +257,14 @@ function navigateTo(path) {
         text="See More Testimonials"
         class="mx-auto lg:mx-0 mt-10 lg:mt-20"
       />
-    </div>
+    </motion.div>
 
     <div class="not-lg:mt-10 h-full md:flex md:gap-2 lg:block">
       <TestimonialCard
         v-for="(testimonial, index) in testimonials"
         :key="testimonial.id"
         :testimonial="testimonial"
+        :index="index"
         class="flex-1"
         :class="
           index === 0
@@ -225,26 +278,42 @@ function navigateTo(path) {
   </section>
 
   <!-- CALL TO ACTION -->
-  <section
+  <motion.section
+    :initial="{ scale: 0 }"
+    :whileInView="{ scale: 1, transition: { duration: 0.5 } }"
+    :inViewOptions="{ once: true }"
     id="call-to-action"
     class="mt-20 mb-25 py-5 w-full lg:w-1/2 lg:mx-auto relative"
   >
     <div
       class="absolute top-10 left-10 lg:left-50 w-1/2 lg:w-1/3 h-1/2 lg:h-1/3 bg-white/5 blur-3xl lg:blur-3xl rounded-xl z-10"
     ></div>
+
     <div
       class="w-full min-h-35 border border-white/20 rounded-xl z-10 bg-white/5 backdrop-blur-md shadow-sm p-5 2xl:p-20 flex flex-col lg:flex-row items-center lg:justify-around"
     >
-      <p class="text-center lg:text-xl 2xl:text-3xl">
+      <motion.p
+        :initial="{ scale: 0 }"
+        :whileInView="{ scale: 1, transition: { duration: 0.5, delay: 0.5 } }"
+        :inViewOptions="{ once: true }"
+        class="text-center lg:text-xl 2xl:text-3xl"
+      >
         Ready to simplify your booking?
-      </p>
-      <MainButton
-        :onClick="() => navigateTo('/contact')"
-        text="Contact Me"
-        class="mt-10 lg:mt-0"
-      />
+      </motion.p>
+
+      <motion.div
+        :initial="{ scale: 0 }"
+        :whileInView="{ scale: 1, transition: { duration: 0.5, delay: 0.8 } }"
+        :inViewOptions="{ once: true }"
+      >
+        <MainButton
+          :onClick="() => navigateTo('/contact')"
+          text="Contact Me"
+          class="mt-10 lg:mt-0"
+        />
+      </motion.div>
     </div>
-  </section>
+  </motion.section>
 </template>
 
 <style scoped>

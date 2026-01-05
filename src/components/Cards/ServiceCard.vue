@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { motion } from "motion-v";
 import FinancialLineChart from "../Charts/FinancialLineChart.vue";
 import MonthlyBarChart from "../Charts/MonthlyBarChart.vue";
 import MonthlyKpiBlock from "../MonthlyKpiBlock.vue";
@@ -9,13 +10,25 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  index: Number,
 });
 
 const expanded = ref(false);
 </script>
 
 <template>
-  <div
+  <motion.div
+    :initial="{ opacity: 0, y: 50 }"
+    :whileInView="{
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.1,
+        duration: 0.6,
+        easing: 'ease-in',
+      },
+    }"
+    :inViewOptions="{ once: true }"
     class="bg-white/2 border border-white/20 backdrop-blur-lg rounded-xl p-6 cursor-pointer hover:scale-102 hover:shadow-sm transition-transform duration-300 flex flex-col"
   >
     <!-- ICON & TITLE -->
@@ -53,5 +66,5 @@ const expanded = ref(false);
     </button>
 
     <p v-if="expanded" class="text-gray-300 text-sm">{{ service.details }}</p>
-  </div>
+  </motion.div>
 </template>

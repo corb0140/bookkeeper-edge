@@ -1,14 +1,23 @@
 <script setup>
+import { motion } from "motion-v";
+
 const props = defineProps({
   testimonial: {
     type: Object,
     required: true,
   },
+  index: Number,
 });
 </script>
 
 <template>
-  <div
+  <motion.div
+    :initial="{ scale: 0 }"
+    :whileInView="{
+      scale: 1,
+      transition: { duration: 0.6, delay: index * 0.15 },
+    }"
+    :inViewOptions="{ once: true }"
     :class="
       testimonial.name !== 'Jason L.'
         ? 'bg-white group hover:z-10'
@@ -48,5 +57,5 @@ const props = defineProps({
         {{ testimonial.businessType }}
       </span>
     </div>
-  </div>
+  </motion.div>
 </template>
