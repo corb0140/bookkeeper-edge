@@ -24,7 +24,7 @@
 
   body,
   html {
-    @apply m-0 max-w-full min-h-screen tracking-wide text-[16px] font-mona bg-primary text-white overflow-x-hidden;
+    @apply m-0 max-w-full min-h-screen tracking-wide text-[16px] font-mona bg-gray-900 text-white overflow-x-hidden;
   }
 
   p {
