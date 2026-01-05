@@ -19,8 +19,7 @@
         "label": "Basic financial reports",
         "icon": "pi pi-chart-line"
       }
-    ],
-    "cta": "Get Started"
+    ]
   },
   {
     "id": "growth",
@@ -51,8 +50,7 @@
         "label": "Detailed financial reports",
         "icon": "pi pi-chart-line"
       }
-    ],
-    "cta": "Choose Plan"
+    ]
   },
   {
     "id": "premium",
@@ -78,7 +76,6 @@
         "label": "Monthly consultation & insights",
         "icon": "pi pi-comments"
       }
-    ],
-    "cta": "Contact Us"
+    ]
   }
 ]

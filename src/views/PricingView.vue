@@ -80,7 +80,7 @@ function selectPlan(id) {
           class="mt-10 w-full py-3 2xl:py-5 rounded-xl bg-primary text-white hover:bg-light-blue transition"
           @click="selectPlan(data.id)"
         >
-          {{ data.cta }}
+          Get Started
         </button>
       </div>
     </div>

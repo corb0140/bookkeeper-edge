@@ -240,7 +240,7 @@ function navigateTo(path) {
       </p>
       <MainButton
         :onClick="() => navigateTo('/contact')"
-        text="Contact us"
+        text="Contact Me"
         class="mt-10 lg:mt-0"
       />
     </div>

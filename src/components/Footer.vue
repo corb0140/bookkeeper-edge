@@ -83,7 +83,7 @@ import socials from "../data/social-media.json";
           </span>
           <span class="flex items-center gap-2 lg:gap-4">
             <i class="pi pi-phone lg:text-[14px] 2xl:text-xl" />
-            <p class="2xl:text-2xl">xxx xxx-xxxx</p>
+            <p class="2xl:text-2xl">(246) 825-2757</p>
           </span>
         </div>
       </div>

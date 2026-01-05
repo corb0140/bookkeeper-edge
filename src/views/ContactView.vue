@@ -78,12 +78,12 @@ function submitForm() {
 
           <p class="flex items-center gap-3 2xl:text-xl">
             <i class="pi pi-phone"></i>
-            (555) 123-4567
+            (246) 825-2757
           </p>
 
           <p class="flex items-center gap-3 2xl:text-xl">
             <i class="pi pi-map-marker"></i>
-            Remote Services • Barbados
+            Remote Services • Christ Church Barbados
           </p>
         </div>
       </div>
@@ -117,7 +117,7 @@ function submitForm() {
         <!-- NAME & EMAIL -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="text-sm font-medium mb-1">Name</label>
+            <label class="text-sm font-medium mb-1">Name (required)</label>
             <input
               v-model="form.name"
               type="text"
@@ -127,7 +127,7 @@ function submitForm() {
           </div>
 
           <div>
-            <label class="text-sm font-medium mb-1">Email</label>
+            <label class="text-sm font-medium mb-1">Email (required)</label>
             <input
               v-model="form.email"
               type="email"
@@ -140,9 +140,7 @@ function submitForm() {
         <!-- OPTIONAL FIELDS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="text-sm font-medium mb-1">
-              Phone Number (optional)
-            </label>
+            <label class="text-sm font-medium mb-1"> Phone Number </label>
             <input
               v-model="form.phone"
               type="tel"
@@ -151,9 +149,7 @@ function submitForm() {
           </div>
 
           <div>
-            <label class="text-sm font-medium mb-1">
-              Business Name (optional)
-            </label>
+            <label class="text-sm font-medium mb-1"> Business Name </label>
             <input
               v-model="form.business"
               type="text"
