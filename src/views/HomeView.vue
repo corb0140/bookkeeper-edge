@@ -29,15 +29,17 @@ function navigateTo(path) {
   <!-- HERO SECTION -->
   <section
     id="hero"
-    class="w-[clamp(300px,50vw,100vw)] mx-auto relative py-10 flex flex-col"
+    class="w-[clamp(300px,50vw,80vw)] mx-auto relative py-10 2xl:py-20 flex flex-col"
   >
     <div
-      class="absolute -top-5 h-full w-full rounded-full bg-white/10 blur-[100px]"
+      class="absolute -top-5 h-full w-full rounded-full bg-white/3 blur-[100px]"
     ></div>
 
-    <h1 class="text-center lg:text-6xl">Your trusted partner in bookkeeping</h1>
+    <h1 class="text-center lg:text-6xl 2xl:text-8xl">
+      Your trusted partner in bookkeeping
+    </h1>
 
-    <p class="text-light text-center mt-5 lg:mt-10">
+    <p class="text-light text-center mt-5 lg:mt-10 2xl:text-xl">
       Simplifying Your Finances So You Can Focus on Growing Your Business.
     </p>
 
@@ -49,11 +51,11 @@ function navigateTo(path) {
   </section>
 
   <!-- SERVICES SECTION -->
-  <section id="services" class="relative mt-20 lg:px-50">
-    <h2 class="font-bold mb-10">Services</h2>
+  <section id="services" class="relative mt-20 lg:px-50 2xl:px-150">
+    <h2 class="font-bold mb-10 2xl:text-6xl">Services</h2>
 
     <div
-      class="relative flex flex-col lg:grid gap-6 lg:min-h-[80vh]"
+      class="relative flex flex-col lg:grid gap-6 lg:min-h-[80vh] 2xl:min-h-100"
       style="
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-auto-rows: auto;
@@ -68,7 +70,7 @@ function navigateTo(path) {
       "
     >
       <div
-        class="absolute left-0 top-0 bg-white/10 blur-[200px] h-full w-full -z-10"
+        class="absolute left-0 top-0 bg-white/6 blur-[200px] h-full w-full"
       />
       <ServiceCard
         v-for="(service, index) in services"
@@ -95,14 +97,14 @@ function navigateTo(path) {
   <!-- TARGET AUDIENCE -->
   <section
     id="target-audience"
-    class="mt-20 py-5 lg:px-50 flex flex-col items-center"
+    class="mt-20 2xl:mt-40 py-5 lg:px-50 2xl:px-80 flex flex-col items-center"
   >
     <div class="w-full md:w-[clamp(30vw,50vw,80vw)]">
-      <h2 class="font-bold mb-10 text-center not-lg:text-2xl">
+      <h2 class="font-bold mb-10 text-center not-lg:text-2xl 2xl:text-6xl">
         Who I Can Help
       </h2>
 
-      <p class="text-center">
+      <p class="text-center 2xl:text-xl">
         I help small business owners, freelancers, and service professionals
         manage their finances so they can focus on growing their business. I
         provide accurate, organized, and stress free bookkeeping.
@@ -137,13 +139,16 @@ function navigateTo(path) {
   </section>
 
   <!-- TRUST SECTION -->
-  <section id="trust" class="mt-20 py-5 lg:px-50 flex flex-col items-center">
+  <section
+    id="trust"
+    class="mt-20 2xl:mt-40 py-5 lg:px-50 2xl:px-80 flex flex-col items-center"
+  >
     <div class="w-full">
-      <h2 class="font-bold mb-10 text-center not-lg:text-2xl">
+      <h2 class="font-bold mb-10 text-center not-lg:text-2xl 2xl:text-6xl">
         Why Trust Bookkeeper's Edge
       </h2>
 
-      <p class="text-center max-w-150 mx-auto">
+      <p class="text-center max-w-150 2xl:max-w-220 mx-auto 2xl:text-xl">
         I provide dependable bookkeeping services built on accuracy, trust, and
         personalized support for your business.
       </p>
@@ -160,18 +165,18 @@ function navigateTo(path) {
       <div class="flex items-center justify-between w-full">
         <div class="flex items-center gap-3">
           <i class="pi pi-check-circle text-green"></i>
-          <span class="font-medium">{{ trust.title }}</span>
+          <span class="font-medium 2xl:text-xl">{{ trust.title }}</span>
         </div>
 
         <i
-          class="pi"
+          class="pi 2xl:text-xl"
           :class="openId === trust.id ? 'pi-chevron-up' : 'pi-chevron-down'"
         ></i>
       </div>
 
       <!-- CONTENT -->
       <transition name="accordion">
-        <p v-if="openId === trust.id" class="mt-3 w-full">
+        <p v-if="openId === trust.id" class="mt-3 w-full 2xl:text-xl">
           {{ trust.description }}
         </p>
       </transition>
@@ -181,16 +186,16 @@ function navigateTo(path) {
   <!-- TESTIMONIALS -->
   <section
     id="trust"
-    class="mt-20 lg:mt-40 py-5 lg:px-50 flex flex-col lg:flex-row items-center lg:gap-x-15 lg:h-[70vh] w-full"
+    class="mt-20 lg:mt-40 2xl:mt-60 py-5 lg:px-50 2xl:px-80 flex flex-col lg:flex-row items-center justify-center lg:gap-x-15 lg:h-[70vh] 2xl:h-[40vh] w-full"
   >
     <div class="h-full flex flex-col items-start gap-4">
       <h2
-        class="font-bold not-lg:mb-10 lg:mt-5 text-center mx-auto md:text-[clamp(1rem,4.5rem,3rem)]"
+        class="font-bold not-lg:mb-10 lg:mt-5 text-center mx-auto md:text-[clamp(1rem,4.5rem,3rem)] 2xl:text-8xl"
       >
         What Clients Say
       </h2>
 
-      <p class="not-lg:text-center max-w-150">
+      <p class="not-lg:text-center max-w-150 2xl:text-xl">
         Trusted by small business owners who value accuracy, reliability, and
         peace of mind.
       </p>
@@ -210,10 +215,10 @@ function navigateTo(path) {
         class="flex-1"
         :class="
           index === 0
-            ? 'lg:w-[clamp(50%,40vw,520px)]'
+            ? 'lg:w-[clamp(50%,40vw,520px)] 2xl:w-full 2xl:h-55'
             : index === 1
-            ? 'relative lg:w-[clamp(250px,20vw,400px)] lg:left-65 lg:bottom-5 z-10'
-            : 'relative lg:w-[clamp(200px,300px,400px)] lg:left-5 lg:bottom-40 lg:min-h-60'
+            ? 'relative lg:w-[clamp(250px,20vw,400px)] 2xl:h-60 lg:left-65 2xl:left-100 lg:bottom-5 z-10'
+            : 'relative lg:w-[clamp(200px,300px,400px)] 2xl:w-1/2 lg:left-5 2xl:left-10 lg:bottom-40 2xl:bottom-55 lg:min-h-60'
         "
       />
     </div>
@@ -222,15 +227,17 @@ function navigateTo(path) {
   <!-- CALL TO ACTION -->
   <section
     id="call-to-action"
-    class="mt-20 py-5 w-full lg:w-1/2 lg:mx-auto relative"
+    class="mt-20 mb-25 py-5 w-full lg:w-1/2 lg:mx-auto relative"
   >
     <div
-      class="absolute top-10 left-10 lg:left-50 w-1/2 lg:w-1/3 h-1/2 lg:h-1/3 bg-white/25 blur-2xl lg:blur-3xl rounded-xl -z-10 opacity"
+      class="absolute top-10 left-10 lg:left-50 w-1/2 lg:w-1/3 h-1/2 lg:h-1/3 bg-white/5 blur-3xl lg:blur-3xl rounded-xl z-10"
     ></div>
     <div
-      class="w-full min-h-35 border border-white/20 rounded-xl z-10 bg-white/5 backdrop-blur-md shadow-sm p-5 flex flex-col lg:flex-row items-center lg:justify-around"
+      class="w-full min-h-35 border border-white/20 rounded-xl z-10 bg-white/5 backdrop-blur-md shadow-sm p-5 2xl:p-20 flex flex-col lg:flex-row items-center lg:justify-around"
     >
-      <p class="text-center lg:text-xl">Ready to simplify your booking?</p>
+      <p class="text-center lg:text-xl 2xl:text-3xl">
+        Ready to simplify your booking?
+      </p>
       <MainButton
         :onClick="() => navigateTo('/contact')"
         text="Contact us"

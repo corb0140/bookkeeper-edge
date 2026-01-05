@@ -55,31 +55,33 @@ function submitForm() {
 </script>
 
 <template>
-  <section class="w-full py-10 lg:mx-auto lg:max-w-300">
+  <section class="w-full py-10 2xl:py-20 lg:mx-auto lg:max-w-300 2xl:max-w-400">
     <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-0">
       <!-- CONTACT -->
       <div class="space-y-6 lg:p-10">
         <div class="lg:mt-10">
-          <h1 class="text-2xl lg:text-5xl font-bold tracking-tight">
+          <h1
+            class="text-2xl lg:text-5xl 2xl:text-7xl font-bold tracking-tight"
+          >
             Bookkeeper's Edge
           </h1>
-          <p class="mt-2">
+          <p class="mt-2 2xl:mt-8 2xl:text-xl">
             Professional bookkeeping services tailored to your business.
           </p>
         </div>
 
         <div class="space-y-3">
-          <p class="flex items-center gap-3">
+          <p class="flex items-center gap-3 2xl:text-xl">
             <i class="pi pi-envelope"></i>
             shaquile.v.clarke@gmail.com
           </p>
 
-          <p class="flex items-center gap-3">
+          <p class="flex items-center gap-3 2xl:text-xl">
             <i class="pi pi-phone"></i>
             (555) 123-4567
           </p>
 
-          <p class="flex items-center gap-3">
+          <p class="flex items-center gap-3 2xl:text-xl">
             <i class="pi pi-map-marker"></i>
             Remote Services • Barbados
           </p>

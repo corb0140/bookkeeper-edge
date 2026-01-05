@@ -4,15 +4,17 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <header>
-    <Navbar />
-  </header>
+  <div class="flex flex-col min-h-screen">
+    <header>
+      <Navbar />
+    </header>
 
-  <main class="p-5">
-    <router-view />
-  </main>
+    <main class="p-5">
+      <router-view />
+    </main>
 
-  <footer class="">
-    <Footer />
-  </footer>
+    <footer class="mt-auto">
+      <Footer />
+    </footer>
+  </div>
 </template>

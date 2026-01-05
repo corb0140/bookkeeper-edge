@@ -16,7 +16,7 @@ const expanded = ref(false);
 
 <template>
   <div
-    class="bg-white/2 border border-light-blue/70 backdrop-blur-lg rounded-xl p-6 cursor-pointer hover:scale-102 hover:shadow-sm transition-transform duration-300 flex flex-col"
+    class="bg-white/2 border border-white/20 backdrop-blur-lg rounded-xl p-6 cursor-pointer hover:scale-102 hover:shadow-sm transition-transform duration-300 flex flex-col"
   >
     <!-- ICON & TITLE -->
     <div class="flex items-center gap-4 mb-4">

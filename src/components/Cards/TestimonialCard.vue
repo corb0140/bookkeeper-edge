@@ -19,8 +19,8 @@ const props = defineProps({
     <p
       :class="
         testimonial.name !== 'Jason L.'
-          ? 'text-light-blue'
-          : 'text-white group-hover:text-light-blue transition-all duration-300'
+          ? 'text-primary'
+          : 'text-white group-hover:text-primary transition-all duration-300'
       "
       class="text-sm mb-4"
     >
@@ -30,10 +30,10 @@ const props = defineProps({
     <div
       :class="
         testimonial.name !== 'Jason L.'
-          ? 'text-light-blue'
-          : 'text-white group-hover:text-light-blue transition-all duration-300'
+          ? 'text-primary'
+          : 'text-white group-hover:primary transition-all duration-300'
       "
-      class="mt-auto font-medium lg:text-sm text-light-blue"
+      class="mt-auto font-medium lg:text-sm text-primary"
     >
       {{ testimonial.name }}
 
