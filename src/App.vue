@@ -4,15 +4,15 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <header class=""">
+  <header>
     <Navbar />
   </header>
 
   <main class="p-5">
-      <router-view />
-    </main>
+    <router-view />
+  </main>
 
   <footer class="">
-      <Footer />
-    </footer>
+    <Footer />
+  </footer>
 </template>
