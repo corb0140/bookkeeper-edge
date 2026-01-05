@@ -16,8 +16,15 @@
 }
 
 @layer base {
-  body {
-    @apply m-0 flex min-h-screen tracking-wide text-[16px] font-mona bg-primary text-white overflow-x-hidden;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    @apply m-0 max-w-full min-h-screen tracking-wide text-[16px] font-mona bg-primary text-white overflow-x-hidden;
   }
 
   p {

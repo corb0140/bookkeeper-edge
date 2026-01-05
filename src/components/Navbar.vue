@@ -1,7 +1,5 @@
-<script setup></script>
-
 <template>
-  <div class="p-5 lg:px-20 flex justify-between lg:text-sm">
+  <div class="max-w-full p-5 lg:px-20 flex justify-between lg:text-sm">
     <span class="lg:text-x"
       ><router-link to="/">Bookkeeper's Edge</router-link></span
     >

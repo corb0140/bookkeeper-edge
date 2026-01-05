@@ -6,31 +6,30 @@ import socials from "../data/social-media.json";
 
 <template>
   <div
-    class="mt-20 min-h-100 w-full border-t border-t-light-blue/80 flex flex-col px-10 items-center justify-center"
+    class="mt-20 min-h-100 max-w-full border-t border-t-light-blue/60 flex flex-col px-10 items-center justify-center"
   >
     <div
-      class="w-full py-5 min-h-50 flex flex-col lg:flex-row lg:justify-around items-center lg:items-start gap-10 border-b border-b-light-blue/80"
+      class="py-5 w-full min-h-50 flex flex-col md:flex-row md:justify-around items-center md:items-start gap-10 border-b border-b-light-blue/60"
     >
       <!-- LOGO & LANGUAGE -->
-      <div
-        class="flex flex-col items-center lg:items-start h-full gap-2 relative"
-      >
+      <div class="flex flex-col w-full md:w-auto h-full gap-2 relative">
         <router-link to="/">
           <img
-            class="h-20 w-20 lg:h-15 lg:w-15"
+            class="h-20 w-20 md:hidden"
             src="../assets/imgs/logo.svg"
             alt="image of company logo"
           />
-        </router-link>
 
-        <div class="lg:mt-2 flex items-center gap-4">
-          <i class="pi pi-language text-[22px] lg:text-[18px]" />
-          <p class="text-lg lg:text-[16px]">English</p>
-        </div>
+          <img
+            class="md:h-25 md:w-25 lg:h-30 lg:w-30 hidden md:block"
+            src="../assets/imgs/logo-text.svg"
+            alt="image of company logo"
+          />
+        </router-link>
       </div>
 
       <!-- LINKS -->
-      <div class="flex flex-col gap-2 w-full lg:w-auto">
+      <div class="flex flex-col gap-2 w-full md:w-auto">
         <p class="font-bold text-lg lg:text-[16px] mb-2">Bookkeeper's Edge</p>
 
         <ul class="flex lg:flex-col gap-4">
@@ -44,7 +43,7 @@ import socials from "../data/social-media.json";
       </div>
 
       <!-- SOCIAL MEDIA -->
-      <div class="flex flex-col w-full lg:w-auto gap-2">
+      <div class="flex flex-col w-full md:w-auto gap-2">
         <p class="font-bold text-lg lg:text-[16px] mb-2">Social Media</p>
         <div
           v-for="(social, index) in socials"
@@ -65,13 +64,13 @@ import socials from "../data/social-media.json";
       </div>
 
       <!-- CONTACT -->
-      <div class="flex flex-col w-full lg:w-auto gap-2">
+      <div class="flex flex-col w-full md:w-auto gap-2">
         <p class="font-bold text-lg lg:text-[16px] mb-2">Contact</p>
 
         <div class="flex flex-col gap-3">
           <span class="flex items-center gap-2 lg:gap-4">
             <i class="pi pi-envelope lg:text-[14px]" />
-            Shaquile.v.clarke@gmail.com
+            shaquile.v.clarke@gmail.com
           </span>
           <span class="flex items-center gap-2 lg:gap-4">
             <i class="pi pi-phone lg:text-[14px]" /> xxx xxx-xxxx
@@ -82,9 +81,9 @@ import socials from "../data/social-media.json";
 
     <!-- COPYRIGHT & PRIVACY POLICY -->
     <div
-      class="w-full py-5 flex flex-col lg:flex-row lg:justify-between gap-5 text-sm font-light"
+      class="w-full py-5 flex flex-col md:flex-row md:justify-between gap-5 text-sm font-light"
     >
-      <p>© 2026 bookkeeper's edge. All rights reserved</p>
+      <p>© 2026 bookkeeper's edge.</p>
       <router-link to="/privacy-policy">privacy policy</router-link>
     </div>
   </div>

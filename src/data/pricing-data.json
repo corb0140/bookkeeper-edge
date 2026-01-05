@@ -1,0 +1,84 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter",
+    "description": "Ideal for small businesses just getting started.",
+    "price": 199,
+    "billing": "month",
+    "featured": false,
+    "features": [
+      {
+        "label": "Monthly bookkeeping",
+        "icon": "pi pi-calendar"
+      },
+      {
+        "label": "Bank reconciliation",
+        "icon": "pi pi-credit-card"
+      },
+      {
+        "label": "Basic financial reports",
+        "icon": "pi pi-chart-line"
+      }
+    ],
+    "cta": "Get Started"
+  },
+  {
+    "id": "growth",
+    "name": "Growth",
+    "description": "Perfect for growing businesses with staff and clients.",
+    "price": 349,
+    "billing": "month",
+    "featured": true,
+    "badge": "Most Popular",
+    "features": [
+      {
+        "label": "Monthly bookkeeping",
+        "icon": "pi pi-calendar"
+      },
+      {
+        "label": "Payroll management",
+        "icon": "pi pi-users"
+      },
+      {
+        "label": "Accounts receivable",
+        "icon": "pi pi-wallet"
+      },
+      {
+        "label": "Accounts payable",
+        "icon": "pi pi-money-bill"
+      },
+      {
+        "label": "Detailed financial reports",
+        "icon": "pi pi-chart-line"
+      }
+    ],
+    "cta": "Choose Plan"
+  },
+  {
+    "id": "premium",
+    "name": "Premium",
+    "description": "Full-service bookkeeping with hands-on support.",
+    "price": 549,
+    "billing": "month",
+    "featured": false,
+    "features": [
+      {
+        "label": "Everything in Growth",
+        "icon": "pi pi-check-circle"
+      },
+      {
+        "label": "Advanced financial reporting",
+        "icon": "pi pi-chart-line"
+      },
+      {
+        "label": "Priority payroll support",
+        "icon": "pi pi-users"
+      },
+      {
+        "label": "Monthly consultation & insights",
+        "icon": "pi pi-comments"
+      }
+    ],
+    "cta": "Contact Us"
+  }
+]

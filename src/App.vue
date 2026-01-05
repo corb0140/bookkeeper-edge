@@ -4,17 +4,15 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <div class="max-w-screen">
-    <header class="">
-      <Navbar />
-    </header>
+  <header class=""">
+    <Navbar />
+  </header>
 
-    <main class="p-5">
+  <main class="p-5">
       <router-view />
     </main>
 
-    <footer>
+  <footer class="">
       <Footer />
     </footer>
-  </div>
 </template>
